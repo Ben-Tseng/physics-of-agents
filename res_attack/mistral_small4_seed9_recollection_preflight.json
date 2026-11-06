@@ -1,0 +1,141 @@
+{
+  "kind": "mistral_connectivity_probe",
+  "created_at_utc": "2026-11-05T23:36:35.090325+00:00",
+  "model": "mistral-small-2603",
+  "backend": "official Mistral API",
+  "calls": 20,
+  "workers": 4,
+  "request_timeout_seconds": 60.0,
+  "minimum_request_interval_seconds": 0.8,
+  "api_retries": 0,
+  "successes": 0,
+  "failures": 20,
+  "success_rate": 0.0,
+  "wall_seconds": 15.224,
+  "latency_seconds": {
+    "median": 3.2,
+    "maximum": 3.212
+  },
+  "results": [
+    {
+      "index": 0,
+      "ok": false,
+      "latency_seconds": 0.273,
+      "error_type": "RuntimeError"
+    },
+    {
+      "index": 1,
+      "ok": false,
+      "latency_seconds": 0.812,
+      "error_type": "RuntimeError"
+    },
+    {
+      "index": 2,
+      "ok": false,
+      "latency_seconds": 1.607,
+      "error_type": "RuntimeError"
+    },
+    {
+      "index": 3,
+      "ok": false,
+      "latency_seconds": 2.404,
+      "error_type": "RuntimeError"
+    },
+    {
+      "index": 4,
+      "ok": false,
+      "latency_seconds": 2.941,
+      "error_type": "RuntimeError"
+    },
+    {
+      "index": 5,
+      "ok": false,
+      "latency_seconds": 3.2,
+      "error_type": "RuntimeError"
+    },
+    {
+      "index": 6,
+      "ok": false,
+      "latency_seconds": 3.202,
+      "error_type": "RuntimeError"
+    },
+    {
+      "index": 7,
+      "ok": false,
+      "latency_seconds": 3.205,
+      "error_type": "RuntimeError"
+    },
+    {
+      "index": 8,
+      "ok": false,
+      "latency_seconds": 3.197,
+      "error_type": "RuntimeError"
+    },
+    {
+      "index": 9,
+      "ok": false,
+      "latency_seconds": 3.196,
+      "error_type": "RuntimeError"
+    },
+    {
+      "index": 10,
+      "ok": false,
+      "latency_seconds": 3.202,
+      "error_type": "RuntimeError"
+    },
+    {
+      "index": 11,
+      "ok": false,
+      "latency_seconds": 3.2,
+      "error_type": "RuntimeError"
+    },
+    {
+      "index": 12,
+      "ok": false,
+      "latency_seconds": 3.2,
+      "error_type": "RuntimeError"
+    },
+    {
+      "index": 13,
+      "ok": false,
+      "latency_seconds": 3.202,
+      "error_type": "RuntimeError"
+    },
+    {
+      "index": 14,
+      "ok": false,
+      "latency_seconds": 3.2,
+      "error_type": "RuntimeError"
+    },
+    {
+      "index": 15,
+      "ok": false,
+      "latency_seconds": 3.2,
+      "error_type": "RuntimeError"
+    },
+    {
+      "index": 16,
+      "ok": false,
+      "latency_seconds": 3.198,
+      "error_type": "RuntimeError"
+    },
+    {
+      "index": 17,
+      "ok": false,
+      "latency_seconds": 3.202,
+      "error_type": "RuntimeError"
+    },
+    {
+      "index": 18,
+      "ok": false,
+      "latency_seconds": 3.199,
+      "error_type": "RuntimeError"
+    },
+    {
+      "index": 19,
+      "ok": false,
+      "latency_seconds": 3.212,
+      "error_type": "RuntimeError"
+    }
+  ]
+}

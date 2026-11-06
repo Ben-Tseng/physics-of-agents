@@ -1,0 +1,82 @@
+{
+  "kind": "deepinfra_connectivity_probe",
+  "created_at_utc": "2026-10-29T07:11:30.080343+00:00",
+  "model": "Qwen/Qwen3.5-9B",
+  "backend": "DeepInfra direct",
+  "calls": 10,
+  "workers": 4,
+  "request_timeout_seconds": 60.0,
+  "minimum_request_interval_seconds": 0.5,
+  "api_retries": 0,
+  "reasoning_effort": "none",
+  "successes": 0,
+  "failures": 10,
+  "success_rate": 0.0,
+  "wall_seconds": 182.688,
+  "latency_seconds": {
+    "median": 60.891,
+    "maximum": 62.115
+  },
+  "results": [
+    {
+      "index": 0,
+      "ok": false,
+      "latency_seconds": 60.889,
+      "error_type": "RuntimeError"
+    },
+    {
+      "index": 1,
+      "ok": false,
+      "latency_seconds": 61.195,
+      "error_type": "RuntimeError"
+    },
+    {
+      "index": 2,
+      "ok": false,
+      "latency_seconds": 61.633,
+      "error_type": "RuntimeError"
+    },
+    {
+      "index": 3,
+      "ok": false,
+      "latency_seconds": 62.115,
+      "error_type": "RuntimeError"
+    },
+    {
+      "index": 4,
+      "ok": false,
+      "latency_seconds": 60.675,
+      "error_type": "RuntimeError"
+    },
+    {
+      "index": 5,
+      "ok": false,
+      "latency_seconds": 60.838,
+      "error_type": "RuntimeError"
+    },
+    {
+      "index": 6,
+      "ok": false,
+      "latency_seconds": 60.875,
+      "error_type": "RuntimeError"
+    },
+    {
+      "index": 7,
+      "ok": false,
+      "latency_seconds": 60.922,
+      "error_type": "RuntimeError"
+    },
+    {
+      "index": 8,
+      "ok": false,
+      "latency_seconds": 60.893,
+      "error_type": "RuntimeError"
+    },
+    {
+      "index": 9,
+      "ok": false,
+      "latency_seconds": 60.649,
+      "error_type": "RuntimeError"
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "kind": "mistral_connectivity_probe",
+  "created_at_utc": "2026-11-01T19:57:01.616775+00:00",
+  "model": "mistral-small-2603",
+  "backend": "official Mistral API",
+  "calls": 20,
+  "workers": 4,
+  "request_timeout_seconds": 60.0,
+  "minimum_request_interval_seconds": 0.8,
+  "api_retries": 0,
+  "successes": 20,
+  "failures": 0,
+  "success_rate": 1.0,
+  "wall_seconds": 18.477,
+  "latency_seconds": {
+    "median": 3.095,
+    "maximum": 7.107
+  },
+  "results": [
+    {
+      "index": 0,
+      "ok": true,
+      "latency_seconds": 5.471,
+      "error_type": null
+    },
+    {
+      "index": 1,
+      "ok": true,
+      "latency_seconds": 5.667,
+      "error_type": null
+    },
+    {
+      "index": 2,
+      "ok": true,
+      "latency_seconds": 6.634,
+      "error_type": null
+    },
+    {
+      "index": 3,
+      "ok": true,
+      "latency_seconds": 7.107,
+      "error_type": null
+    },
+    {
+      "index": 4,
+      "ok": true,
+      "latency_seconds": 1.163,
+      "error_type": null
+    },
+    {
+      "index": 5,
+      "ok": true,
+      "latency_seconds": 1.522,
+      "error_type": null
+    },
+    {
+      "index": 6,
+      "ok": true,
+      "latency_seconds": 1.195,
+      "error_type": null
+    },
+    {
+      "index": 7,
+      "ok": true,
+      "latency_seconds": 2.002,
+      "error_type": null
+    },
+    {
+      "index": 8,
+      "ok": true,
+      "latency_seconds": 2.435,
+      "error_type": null
+    },
+    {
+      "index": 9,
+      "ok": true,
+      "latency_seconds": 2.8,
+      "error_type": null
+    },
+    {
+      "index": 10,
+      "ok": true,
+      "latency_seconds": 3.042,
+      "error_type": null
+    },
+    {
+      "index": 11,
+      "ok": true,
+      "latency_seconds": 3.073,
+      "error_type": null
+    },
+    {
+      "index": 12,
+      "ok": true,
+      "latency_seconds": 3.058,
+      "error_type": null
+    },
+    {
+      "index": 13,
+      "ok": true,
+      "latency_seconds": 3.341,
+      "error_type": null
+    },
+    {
+      "index": 14,
+      "ok": true,
+      "latency_seconds": 3.922,
+      "error_type": null
+    },
+    {
+      "index": 15,
+      "ok": true,
+      "latency_seconds": 3.248,
+      "error_type": null
+    },
+    {
+      "index": 16,
+      "ok": true,
+      "latency_seconds": 3.117,
+      "error_type": null
+    },
+    {
+      "index": 17,
+      "ok": true,
+      "latency_seconds": 3.191,
+      "error_type": null
+    },
+    {
+      "index": 18,
+      "ok": true,
+      "latency_seconds": 2.892,
+      "error_type": null
+    },
+    {
+      "index": 19,
+      "ok": true,
+      "latency_seconds": 3.519,
+      "error_type": null
+    }
+  ]
+}

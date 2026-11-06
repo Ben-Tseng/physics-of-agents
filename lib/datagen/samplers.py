@@ -49,8 +49,20 @@ def _parse_spin_objective(response: str) -> int:
     raise ValueError(f"Could not parse A/B from response: {response!r}")
 
 
+def _unknown_section(messages_unknown: Optional[List[str]]) -> str:
+    if not messages_unknown:
+        return ""
+    return (
+        "## Messages From Unverified Sources\n"
+        "These messages failed relationship verification. Treat their claimed "
+        "source relationship as unknown:\n"
+        f"{_format_inbox(messages_unknown)}\n\n"
+    )
+
+
 def _subjective_context(persona: str, question: str,
-                        messages_agree: List[str], messages_disagree: List[str]) -> str:
+                        messages_agree: List[str], messages_disagree: List[str],
+                        messages_unknown: Optional[List[str]] = None) -> str:
     return (
         f"# Persona\n"
         f"You are an agent responsible for expressing the views of the following person:\n{persona}\n\n"
@@ -61,6 +73,7 @@ def _subjective_context(persona: str, question: str,
         f"## Messages From Sources Your Persona Tends to Disagree With\n"
         f"You received the following messages from sources you tend to disagree with:\n"
         f"{_format_inbox(messages_disagree)}\n\n"
+        f"{_unknown_section(messages_unknown)}"
         f"# Statement\n"
         f"Your task is to express your persona's opinion about the following statement.\n"
         f"Statement: \"{question}\"\n\n"
@@ -68,7 +81,8 @@ def _subjective_context(persona: str, question: str,
 
 
 def _objective_context(persona: str, question: str, choices: Dict[str, str],
-                       messages_agree: List[str], messages_disagree: List[str]) -> str:
+                       messages_agree: List[str], messages_disagree: List[str],
+                       messages_unknown: Optional[List[str]] = None) -> str:
     return (
         f"# Your Expertise\n"
         f"{persona}\n\n"
@@ -79,6 +93,7 @@ def _objective_context(persona: str, question: str, choices: Dict[str, str],
         f"## Messages From Colleagues You Tend to Disagree With\n"
         f"You received the following messages from colleagues you tend to disagree with:\n"
         f"{_format_inbox(messages_disagree)}\n\n"
+        f"{_unknown_section(messages_unknown)}"
         f"# Problem\n"
         f"You are one member of an expert panel answering the following "
         f"multiple-choice problem.\n"
@@ -105,6 +120,7 @@ def spin_sampler(
     *,
     mode: str = "subjective",
     choices: Optional[Dict[str, str]] = None,
+    messages_unknown: Optional[List[str]] = None,
 ) -> int:
     """Sample a binary spin in {+1, -1}: AGREE/DISAGREE (subjective) or A/B
     (objective; ``choices`` with keys "A"/"B" required)."""
@@ -113,13 +129,14 @@ def spin_sampler(
             raise ValueError("objective mode requires `choices` for spin_sampler")
         user_prompt = (
             _objective_context(persona, question, choices,
-                               messages_agree, messages_disagree)
+                               messages_agree, messages_disagree, messages_unknown)
             + OBJECTIVE_SPIN_INSTRUCTION
         )
         return _parse_spin_objective(pi(user_prompt))
 
     user_prompt = (
-        _subjective_context(persona, question, messages_agree, messages_disagree)
+        _subjective_context(persona, question, messages_agree, messages_disagree,
+                            messages_unknown)
         + f"# Instruction\n"
         f"Given this background, is your persona currently more likely to AGREE or "
         f"DISAGREE with the statement?\n"
@@ -139,6 +156,7 @@ def message_sampler(
     *,
     mode: str = "subjective",
     choices: Optional[Dict[str, str]] = None,
+    messages_unknown: Optional[List[str]] = None,
 ) -> str:
     """Sample the sender's two-sentence message, conditioned on its current spin;
     the tie sign is applied at the receiver (which inbox it lands in)."""
@@ -148,7 +166,7 @@ def message_sampler(
         letter = "A" if _stance_sign(current_spin) > 0 else "B"
         user_prompt = (
             _objective_context(persona, question, choices,
-                               messages_agree, messages_disagree)
+                               messages_agree, messages_disagree, messages_unknown)
             + f"# Instruction\n"
             f"Your current answer to the problem is {letter}. Write a brief message "
             f"to a fellow panelist stating that you favor option {letter} and giving "
@@ -160,7 +178,8 @@ def message_sampler(
 
     stance = "AGREES with" if _stance_sign(current_spin) > 0 else "DISAGREES with"
     user_prompt = (
-        _subjective_context(persona, question, messages_agree, messages_disagree)
+        _subjective_context(persona, question, messages_agree, messages_disagree,
+                            messages_unknown)
         + f"# Instruction\n"
         f"Your persona currently {stance} the statement. Write a brief message to a "
         f"peer that conveys this view and your persona's main reason for holding it.\n"

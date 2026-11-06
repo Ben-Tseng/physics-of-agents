@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "experiment": "subjective_energy",
+    "mode": "subjective",
+    "model": "mock",
+    "backend": "mock",
+    "temperature": 0.7,
+    "num_agents": 4,
+    "num_edges": 6,
+    "num_train_graphs": 1,
+    "num_seen_graphs": 1,
+    "num_fresh_graphs": 0,
+    "lattice_ids": [],
+    "lattice_rows": 4,
+    "lattice_cols": 8,
+    "lattice_weight": 1,
+    "trajectories": 1,
+    "num_steps": 2,
+    "k": 3,
+    "seed": 0,
+    "persona_file": "data/subj/personas.json",
+    "persona_order": "canonical_fixed",
+    "seen_graph_ids": [
+      "J0"
+    ]
+  },
+  "replicas": {
+    "political_stance_0__J0__rep00": {
+      "qid": "political_stance_0",
+      "split": "train",
+      "question": "Student loan debt should be forgiven by the government",
+      "graph_id": "J0",
+      "graph_seen": true,
+      "repeat": 0,
+      "num_edges": 6
+    },
+    "political_stance_156__J0__rep00": {
+      "qid": "political_stance_156",
+      "split": "test",
+      "question": "Financial transaction taxes would reduce market volatility",
+      "graph_id": "J0",
+      "graph_seen": true,
+      "repeat": 0,
+      "num_edges": 6
+    }
+  }
+}

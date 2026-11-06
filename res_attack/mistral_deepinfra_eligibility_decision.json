@@ -1,0 +1,20 @@
+{
+  "model": "mistralai/mistral-nemo",
+  "passed": false,
+  "observed": {
+    "episodes": 6,
+    "correct_terminal_majorities": 3,
+    "mean_agent_accuracy": 0.5,
+    "parse_failures": 0,
+    "message_call_failures": 0,
+    "invalid_honest_credentials": 0
+  },
+  "checks": {
+    "all_expected_episodes_complete": true,
+    "correct_terminal_majorities": false,
+    "mean_agent_accuracy": false,
+    "parse_failures": true,
+    "message_call_failures": true,
+    "invalid_honest_credentials": true
+  }
+}

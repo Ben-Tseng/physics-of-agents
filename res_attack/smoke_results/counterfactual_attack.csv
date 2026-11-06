@@ -1,0 +1,10 @@
+model_key,model,seed,strategy,defense,k,flip_rate,eligible_episodes,test_episodes,base_predicted_success_rate,observed_success_rate,base_observed_majority_agreement,attack_weight_per_message,k_star_50
+gpt,GPT-4o-mini,0,random,none,0,0.0,517,800,0.64625,0.60625,0.6625,2.906973686191686,
+gpt,GPT-4o-mini,0,random,none,1,0.2011605415860735,517,800,0.64625,0.60625,0.6625,2.906973686191686,
+gpt,GPT-4o-mini,0,random,none,2,0.40425531914893614,517,800,0.64625,0.60625,0.6625,2.906973686191686,
+gpt,GPT-4o-mini,0,random,downgrade,0,0.0,517,800,0.64625,0.60625,0.6625,0.927971142944242,
+gpt,GPT-4o-mini,0,random,downgrade,1,0.06963249516441006,517,800,0.64625,0.60625,0.6625,0.927971142944242,
+gpt,GPT-4o-mini,0,random,downgrade,2,0.15087040618955513,517,800,0.64625,0.60625,0.6625,0.927971142944242,
+gpt,GPT-4o-mini,0,random,drop,0,0.0,517,800,0.64625,0.60625,0.6625,0.0,
+gpt,GPT-4o-mini,0,random,drop,1,0.0,517,800,0.64625,0.60625,0.6625,0.0,
+gpt,GPT-4o-mini,0,random,drop,2,0.0,517,800,0.64625,0.60625,0.6625,0.0,

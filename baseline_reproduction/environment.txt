@@ -1,0 +1,9 @@
+Platform: macOS arm64
+Python: 3.9.6
+Dependency source: ../requirements.txt
+NumPy: 1.26.3
+Pandas: 1.5.2
+Matplotlib: 3.7.1
+OpenAI: 2.22.0
+Datasets: 3.6.0
+JupyterLab: 4.0.0
