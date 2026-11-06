@@ -1,5 +1,12 @@
 .env
+.venv/
 checklist.md
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+.pycache/
+.jupyter/
+.jupyter_data/
+.ipython/
+data/attack_pilot_smoke/
+data/attack_*/

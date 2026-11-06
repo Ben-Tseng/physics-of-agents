@@ -1,0 +1,21 @@
+{
+  "models": [
+    "gpt"
+  ],
+  "seeds": [
+    0
+  ],
+  "strategies": [
+    "random"
+  ],
+  "ks": [
+    0,
+    1,
+    2
+  ],
+  "d": 4,
+  "target_pool": 8,
+  "thermal_trajectories": 5,
+  "episode_filter": "objective test-question episodes",
+  "interpretation": "fitted-model counterfactual; no new LLM calls"
+}

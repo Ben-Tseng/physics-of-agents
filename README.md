@@ -22,6 +22,35 @@ online_appendix/        static browser for the message-level data
 
 See [implementation_details.md](implementation_details.md) for the code and data guide, and [reproducibility_audit.md](reproducibility_audit.md) for the reproducibility audit.
 
+## Fork extension: authenticated sender attacks
+
+This fork adds a confirmatory study of external-sender attacks and edge-level
+credential defenses. The frozen design contains 20 accepted model-seed blocks
+and 3,600 episodes collected from two official deployments: Qwen3.5-27B on
+Alibaba Cloud Model Studio and `mistral-small-2603` through the Mistral API.
+
+The release includes the attack generator and provider adapters, the frozen
+design matrices, quality-control summaries, accepted episode-level analysis
+data, analysis code, and manuscript-ready results. Raw API message logs and
+local credentials are intentionally excluded from Git history.
+
+- [Confirmatory analysis report](res_attack/confirmatory_analysis/CONFIRMATORY_ANALYSIS_REPORT.md)
+- [Manuscript-ready sections](res_attack/confirmatory_analysis/MANUSCRIPT_CONFIRMATORY_SECTIONS.md)
+- [Manuscript integration audit](res_attack/confirmatory_analysis/MANUSCRIPT_INTEGRATION_AUDIT.md)
+- [Accepted block manifest](res_attack/confirmatory_analysis/accepted_block_manifest.csv)
+- [Accepted episode-level data](res_attack/confirmatory_analysis/accepted_episode_data.csv)
+- [Analysis metadata and file hashes](res_attack/confirmatory_analysis/analysis_metadata.json)
+
+Rebuild the confirmatory statistics and figure from the repository root:
+
+```bash
+python res_attack/analyze_confirmatory.py
+```
+
+The formal analysis uses question-clustered inference and 2,000 clustered
+bootstrap resamples. Deployment comparisons are reported descriptively and are
+not interpreted as causal model-family effects.
+
 ### System Requirements
 
 This code uses Python and the packages listed in [requirements.txt](requirements.txt). The analysis notebooks under res/ use CPU computation and do not require a GPU or other specialized hardware. Generating new language-model responses with the data generation code under lib/ requires access to a language model API. The code has been successfully tested on macOS 26.6.2, Apple Silicon (arm64), Python 3.9.13. 

@@ -4,6 +4,8 @@
 numpy==1.26.3
 pandas==1.5.2
 matplotlib==3.7.1
+scipy==1.13.1
+statsmodels==0.14.4
 
 # Experiment generation
 tqdm==4.67.1

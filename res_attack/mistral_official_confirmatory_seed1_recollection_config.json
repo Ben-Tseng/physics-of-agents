@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "frozen_on": "2026-10-31 before any replacement-block request",
+  "models": ["mistral-small-2603"],
+  "provider": "deployment-specific official API",
+  "model_max_workers": {
+    "mistral-small-2603": 4
+  },
+  "common": {
+    "num_agents": 8,
+    "num_edges": 28,
+    "num_steps": 2,
+    "spin_samples": 3,
+    "attack_degree": 4,
+    "temperature": 0.7,
+    "request_timeout_seconds": 60,
+    "api_max_retries": 0,
+    "min_request_interval_seconds": 0.0,
+    "calls_per_episode": 88
+  },
+  "confirmatory": {
+    "scope": "complete replacement recollection of excluded official-Mistral seed-1 block",
+    "models": ["mistral-small-2603"],
+    "model_runtimes": {
+      "mistral-small-2603": {
+        "backend": "mistral",
+        "provider": "MistralAI",
+        "max_workers": 4,
+        "min_request_interval_seconds": 0.8
+      }
+    },
+    "question_file": "data/obj/test.jsonl",
+    "question_ids": [
+      "math_test_417",
+      "math_test_426",
+      "math_test_101",
+      "math_test_479",
+      "math_test_490",
+      "math_test_461",
+      "math_test_157",
+      "math_test_329",
+      "math_test_33",
+      "math_test_196",
+      "math_test_59",
+      "math_test_123",
+      "math_test_388",
+      "math_test_424",
+      "math_test_487",
+      "math_test_197",
+      "math_test_132",
+      "math_test_21"
+    ],
+    "attack_budgets": [1, 2, 4],
+    "defenses": ["none", "downgrade", "drop"],
+    "seeds": [1],
+    "output_root": "data/attack_confirmatory_official_two_deployment_mistral_seed1_recollection1",
+    "quality_gate": {
+      "maximum_raw_zero_rate": 0.01,
+      "maximum_unique_sender_message_failure_rate": 0.01,
+      "maximum_invalid_honest_credentials": 0,
+      "exclude_entire_model_seed_block_on_failure": true
+    }
+  }
+}

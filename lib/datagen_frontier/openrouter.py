@@ -33,6 +33,11 @@ def make_openrouter_pi(
     max_retries: int = 4,
     api_key: str | None = None,
     reasoning: str = "default",
+    provider: str | None = None,
+    allow_fallbacks: bool = False,
+    data_collection: str = "deny",
+    request_timeout: float = 60.0,
+    min_request_interval: float = 0.0,
 ) -> Pi:
     """`Pi` via OpenRouter's OpenAI-compatible endpoint; key from ``OPENROUTER_API_KEY``."""
     if api_key is None:
@@ -42,6 +47,14 @@ def make_openrouter_pi(
                 "OPENROUTER_API_KEY is not set. Export it or pass api_key=... "
                 "to make_openrouter_pi."
             )
+    extra_body = reasoning_extra_body(reasoning) or {}
+    provider_options: dict[str, object] = {
+        "allow_fallbacks": allow_fallbacks,
+        "data_collection": data_collection,
+    }
+    if provider:
+        provider_options["order"] = [provider]
+    extra_body["provider"] = provider_options
     return make_openai_pi(
         model=model,
         temperature=temperature,
@@ -49,7 +62,9 @@ def make_openrouter_pi(
         max_retries=max_retries,
         base_url=OPENROUTER_BASE_URL,
         api_key=api_key,
-        extra_body=reasoning_extra_body(reasoning),
+        extra_body=extra_body,
+        request_timeout=request_timeout,
+        min_request_interval=min_request_interval,
     )
 
 
@@ -60,6 +75,11 @@ def make_openrouter_pis(
     max_retries: int = 4,
     api_key: str | None = None,
     reasoning: str = "default",
+    provider: str | None = None,
+    allow_fallbacks: bool = False,
+    data_collection: str = "deny",
+    request_timeout: float = 60.0,
+    min_request_interval: float = 0.0,
 ) -> Dict[str, Pi]:
     """One `Pi` per unique model name, keyed by model name."""
     return {
@@ -70,6 +90,11 @@ def make_openrouter_pis(
             max_retries=max_retries,
             api_key=api_key,
             reasoning=reasoning,
+            provider=provider,
+            allow_fallbacks=allow_fallbacks,
+            data_collection=data_collection,
+            request_timeout=request_timeout,
+            min_request_interval=min_request_interval,
         )
         for m in dict.fromkeys(models)
     }

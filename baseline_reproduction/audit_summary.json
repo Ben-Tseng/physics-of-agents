@@ -1,0 +1,7 @@
+{
+  "numeric_values_compared": 372,
+  "max_absolute_reproduction_delta": 5.10702591327572e-13,
+  "mean_absolute_reproduction_delta": 4.806629456481085e-14,
+  "draft_values_are_rounded_repo_values": true,
+  "standardization_note": "res/utils.py standardizes columns during optimization, then divides by the column standard deviations and adjusts the intercept before saving. The stored fields and couplings therefore apply to raw design rows."
+}

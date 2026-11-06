@@ -1,0 +1,142 @@
+{
+  "kind": "dashscope_connectivity_probe",
+  "created_at_utc": "2026-11-05T08:20:00.182868+00:00",
+  "model": "qwen3.5-27b",
+  "backend": "Alibaba Cloud Model Studio workspace endpoint",
+  "calls": 20,
+  "workers": 4,
+  "request_timeout_seconds": 60.0,
+  "minimum_request_interval_seconds": 0.5,
+  "api_retries": 0,
+  "enable_thinking": false,
+  "successes": 20,
+  "failures": 0,
+  "success_rate": 1.0,
+  "wall_seconds": 21.562,
+  "latency_seconds": {
+    "median": 1.778,
+    "maximum": 15.514
+  },
+  "results": [
+    {
+      "index": 0,
+      "ok": true,
+      "latency_seconds": 2.463,
+      "error_type": null
+    },
+    {
+      "index": 1,
+      "ok": true,
+      "latency_seconds": 2.466,
+      "error_type": null
+    },
+    {
+      "index": 2,
+      "ok": true,
+      "latency_seconds": 15.514,
+      "error_type": null
+    },
+    {
+      "index": 3,
+      "ok": true,
+      "latency_seconds": 15.417,
+      "error_type": null
+    },
+    {
+      "index": 4,
+      "ok": true,
+      "latency_seconds": 0.407,
+      "error_type": null
+    },
+    {
+      "index": 5,
+      "ok": true,
+      "latency_seconds": 12.754,
+      "error_type": null
+    },
+    {
+      "index": 6,
+      "ok": true,
+      "latency_seconds": 12.494,
+      "error_type": null
+    },
+    {
+      "index": 7,
+      "ok": true,
+      "latency_seconds": 0.354,
+      "error_type": null
+    },
+    {
+      "index": 8,
+      "ok": true,
+      "latency_seconds": 0.792,
+      "error_type": null
+    },
+    {
+      "index": 9,
+      "ok": true,
+      "latency_seconds": 4.004,
+      "error_type": null
+    },
+    {
+      "index": 10,
+      "ok": true,
+      "latency_seconds": 1.564,
+      "error_type": null
+    },
+    {
+      "index": 11,
+      "ok": true,
+      "latency_seconds": 1.994,
+      "error_type": null
+    },
+    {
+      "index": 12,
+      "ok": true,
+      "latency_seconds": 1.902,
+      "error_type": null
+    },
+    {
+      "index": 13,
+      "ok": true,
+      "latency_seconds": 1.44,
+      "error_type": null
+    },
+    {
+      "index": 14,
+      "ok": true,
+      "latency_seconds": 1.466,
+      "error_type": null
+    },
+    {
+      "index": 15,
+      "ok": true,
+      "latency_seconds": 1.474,
+      "error_type": null
+    },
+    {
+      "index": 16,
+      "ok": true,
+      "latency_seconds": 1.633,
+      "error_type": null
+    },
+    {
+      "index": 17,
+      "ok": true,
+      "latency_seconds": 1.551,
+      "error_type": null
+    },
+    {
+      "index": 18,
+      "ok": true,
+      "latency_seconds": 1.654,
+      "error_type": null
+    },
+    {
+      "index": 19,
+      "ok": true,
+      "latency_seconds": 2.028,
+      "error_type": null
+    }
+  ]
+}

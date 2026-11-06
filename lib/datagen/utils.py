@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import os
+import threading
 import time
 
 from .samplers import Pi
@@ -19,6 +20,8 @@ def make_openai_pi(
     base_url: str | None = None,
     api_key: str | None = None,
     extra_body: dict | None = None,
+    request_timeout: float | None = None,
+    min_request_interval: float = 0.0,
 ) -> Pi:
     """`Pi` via the OpenAI chat-completions API (or any compatible ``base_url``),
     with exponential-backoff retries; key defaults to ``OPENAI_API_KEY``."""
@@ -33,12 +36,33 @@ def make_openai_pi(
         raise RuntimeError(
             "OPENAI_API_KEY is not set. Export it or pass api_key=... to make_openai_pi."
         )
+    if request_timeout is not None:
+        client_kwargs["timeout"] = request_timeout
+        # Keep retry behavior in the explicit loop below so latency and attempts
+        # are bounded and auditable rather than multiplied by SDK retries.
+        client_kwargs["max_retries"] = 0
     client = OpenAI(**client_kwargs)
+    if min_request_interval < 0:
+        raise ValueError("minimum request interval must be nonnegative")
+    schedule_lock = threading.Lock()
+    next_request_start = [0.0]
+
+    def wait_for_request_slot() -> None:
+        if min_request_interval == 0:
+            return
+        with schedule_lock:
+            now = time.monotonic()
+            start = max(now, next_request_start[0])
+            next_request_start[0] = start + min_request_interval
+        delay = start - now
+        if delay > 0:
+            time.sleep(delay)
 
     def pi(prompt: str) -> str:
         last_exc: Exception | None = None
         for attempt in range(max_retries + 1):
             try:
+                wait_for_request_slot()
                 resp = client.chat.completions.create(
                     model=model,
                     messages=[{"role": "user", "content": prompt}],

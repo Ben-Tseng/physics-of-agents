@@ -61,6 +61,8 @@ def load_questions(path: str | Path, limit: int | None) -> List[Dict[str, Any]]:
         row: Dict[str, Any] = {"qid": r["qid"], "question": r["question"]}
         if "choices" in r:
             row["choices"] = r["choices"]
+        if "answer" in r:
+            row["answer"] = r["answer"]
         rows.append(row)
         if limit is not None and len(rows) >= limit:
             break

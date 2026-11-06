@@ -1,0 +1,16 @@
+{
+  "accepted_blocks": 20,
+  "accepted_episodes": 3600,
+  "bootstrap_resamples": 2000,
+  "bootstrap_seed": 20261106,
+  "glmm_formula": "incorrect_terminal_majority ~ attack_budget * defense + model",
+  "random_intercepts": [
+    "question_id",
+    "seed"
+  ],
+  "optimizer_warnings": [],
+  "numpy_version": "1.26.3",
+  "pandas_version": "1.5.2",
+  "scipy_version": "1.13.1",
+  "statsmodels_version": "0.14.4"
+}

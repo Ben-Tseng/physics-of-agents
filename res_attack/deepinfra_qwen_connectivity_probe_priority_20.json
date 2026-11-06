@@ -1,0 +1,143 @@
+{
+  "kind": "deepinfra_connectivity_probe",
+  "created_at_utc": "2026-10-29T09:02:55.195690+00:00",
+  "model": "Qwen/Qwen3.5-9B",
+  "backend": "DeepInfra direct",
+  "calls": 20,
+  "workers": 4,
+  "request_timeout_seconds": 60.0,
+  "minimum_request_interval_seconds": 0.5,
+  "api_retries": 0,
+  "reasoning_effort": "none",
+  "service_tier": "priority",
+  "successes": 20,
+  "failures": 0,
+  "success_rate": 1.0,
+  "wall_seconds": 10.228,
+  "latency_seconds": {
+    "median": 1.924,
+    "maximum": 2.658
+  },
+  "results": [
+    {
+      "index": 0,
+      "ok": true,
+      "latency_seconds": 1.534,
+      "error_type": null
+    },
+    {
+      "index": 1,
+      "ok": true,
+      "latency_seconds": 1.74,
+      "error_type": null
+    },
+    {
+      "index": 2,
+      "ok": true,
+      "latency_seconds": 2.234,
+      "error_type": null
+    },
+    {
+      "index": 3,
+      "ok": true,
+      "latency_seconds": 2.658,
+      "error_type": null
+    },
+    {
+      "index": 4,
+      "ok": true,
+      "latency_seconds": 1.073,
+      "error_type": null
+    },
+    {
+      "index": 5,
+      "ok": true,
+      "latency_seconds": 1.317,
+      "error_type": null
+    },
+    {
+      "index": 6,
+      "ok": true,
+      "latency_seconds": 1.909,
+      "error_type": null
+    },
+    {
+      "index": 7,
+      "ok": true,
+      "latency_seconds": 1.538,
+      "error_type": null
+    },
+    {
+      "index": 8,
+      "ok": true,
+      "latency_seconds": 2.177,
+      "error_type": null
+    },
+    {
+      "index": 9,
+      "ok": true,
+      "latency_seconds": 2.134,
+      "error_type": null
+    },
+    {
+      "index": 10,
+      "ok": true,
+      "latency_seconds": 2.021,
+      "error_type": null
+    },
+    {
+      "index": 11,
+      "ok": true,
+      "latency_seconds": 1.971,
+      "error_type": null
+    },
+    {
+      "index": 12,
+      "ok": true,
+      "latency_seconds": 1.807,
+      "error_type": null
+    },
+    {
+      "index": 13,
+      "ok": true,
+      "latency_seconds": 1.874,
+      "error_type": null
+    },
+    {
+      "index": 14,
+      "ok": true,
+      "latency_seconds": 1.506,
+      "error_type": null
+    },
+    {
+      "index": 15,
+      "ok": true,
+      "latency_seconds": 2.135,
+      "error_type": null
+    },
+    {
+      "index": 16,
+      "ok": true,
+      "latency_seconds": 1.921,
+      "error_type": null
+    },
+    {
+      "index": 17,
+      "ok": true,
+      "latency_seconds": 2.127,
+      "error_type": null
+    },
+    {
+      "index": 18,
+      "ok": true,
+      "latency_seconds": 2.175,
+      "error_type": null
+    },
+    {
+      "index": 19,
+      "ok": true,
+      "latency_seconds": 1.927,
+      "error_type": null
+    }
+  ]
+}

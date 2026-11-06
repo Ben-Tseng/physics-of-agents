@@ -1,0 +1,83 @@
+{
+  "kind": "deepinfra_connectivity_probe",
+  "created_at_utc": "2026-10-29T09:02:10.107747+00:00",
+  "model": "Qwen/Qwen3.5-9B",
+  "backend": "DeepInfra direct",
+  "calls": 10,
+  "workers": 4,
+  "request_timeout_seconds": 60.0,
+  "minimum_request_interval_seconds": 0.5,
+  "api_retries": 0,
+  "reasoning_effort": "none",
+  "service_tier": "priority",
+  "successes": 10,
+  "failures": 0,
+  "success_rate": 1.0,
+  "wall_seconds": 6.914,
+  "latency_seconds": {
+    "median": 2.239,
+    "maximum": 4.087
+  },
+  "results": [
+    {
+      "index": 0,
+      "ok": true,
+      "latency_seconds": 3.637,
+      "error_type": null
+    },
+    {
+      "index": 1,
+      "ok": true,
+      "latency_seconds": 4.076,
+      "error_type": null
+    },
+    {
+      "index": 2,
+      "ok": true,
+      "latency_seconds": 3.462,
+      "error_type": null
+    },
+    {
+      "index": 3,
+      "ok": true,
+      "latency_seconds": 4.087,
+      "error_type": null
+    },
+    {
+      "index": 4,
+      "ok": true,
+      "latency_seconds": 1.297,
+      "error_type": null
+    },
+    {
+      "index": 5,
+      "ok": true,
+      "latency_seconds": 2.404,
+      "error_type": null
+    },
+    {
+      "index": 6,
+      "ok": true,
+      "latency_seconds": 0.892,
+      "error_type": null
+    },
+    {
+      "index": 7,
+      "ok": true,
+      "latency_seconds": 1.457,
+      "error_type": null
+    },
+    {
+      "index": 8,
+      "ok": true,
+      "latency_seconds": 2.073,
+      "error_type": null
+    },
+    {
+      "index": 9,
+      "ok": true,
+      "latency_seconds": 1.946,
+      "error_type": null
+    }
+  ]
+}
