@@ -11,3 +11,5 @@ __pycache__/
 .ipython/
 data/attack_pilot_smoke/
 data/attack_*/
+tmp/
+paper/build/

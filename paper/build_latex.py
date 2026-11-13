@@ -35,6 +35,19 @@ CITE_KEYS = {
     24: "debenedetti2024agentdojo",
     25: "zhang2025asb",
     26: "zhan2024injecagent",
+    27: "he2025redteaming",
+    28: "wang2025gsafeguard",
+    29: "lee2024promptinfection",
+    30: "zhou2026trustcascade",
+    31: "paul2026beyond",
+    32: "cui2025madspear",
+    33: "hu2026speaker",
+    34: "hines2024spotlighting",
+    35: "wallace2024hierarchy",
+    36: "debenedetti2025camel",
+    37: "costa2025fides",
+    38: "zheng2025byzantine",
+    39: "ebrahimi2025credibility",
 }
 
 
@@ -105,6 +118,22 @@ def table_to_tex(rows, caption):
     cells = [[cell.strip() for cell in row.strip().strip("|").split("|")] for row in rows]
     cells = [row for row in cells if not all(re.fullmatch(r":?-+:?", cell) for cell in row)]
     width = len(cells[0])
+    if max(len(cell) for row in cells for cell in row) > 60:
+        # Text-heavy table: wrap cells instead of shrinking the whole table.
+        lines = [
+            r"\begin{table}[htbp]",
+            r"\centering",
+            r"\caption{" + convert_inline(caption) + "}",
+            r"\scriptsize",
+            r"\begin{tabularx}{\textwidth}{" + ">{\\raggedright\\arraybackslash}X" * width + "}",
+            r"\toprule",
+            " & ".join(convert_inline(cell) for cell in cells[0]) + r" \\",
+            r"\midrule",
+        ]
+        for row in cells[1:]:
+            lines.append(" & ".join(convert_inline(cell) for cell in row) + r" \\")
+        lines.extend([r"\bottomrule", r"\end{tabularx}", r"\end{table}", r"\FloatBarrier"])
+        return lines
     alignment = "l" + "r" * (width - 1)
     lines = [
         r"\begin{table}[htbp]",
@@ -131,6 +160,7 @@ def convert():
     lines = SOURCE.read_text().splitlines()
     out = []
     in_equation = False
+    in_abstract = False
     pending_table_caption = None
     i = 0
     while i < len(lines):
@@ -145,10 +175,15 @@ def convert():
             continue
         if line == "## Abstract":
             out.append(r"\begin{abstract}")
+            in_abstract = True
             i += 1
             continue
+        if in_abstract and line.startswith("## ") and line != "## \u6458要":
+            out.append(r"\end{abstract}")
+            in_abstract = False
         if line == "## \u6458要":
             out.extend([r"\end{abstract}", r"\section*{摘要}"])
+            in_abstract = False
             i += 1
             continue
         if line.startswith("## "):
@@ -160,7 +195,7 @@ def convert():
             i += 1
             continue
         if line.startswith("**Table ") and line.endswith("**"):
-            pending_table_caption = re.sub(r"^Table \d+\.\s*", "", line[2:-2])
+            pending_table_caption = re.sub(r"^Table \d+[a-z]?\.\s*", "", line[2:-2])
             i += 1
             continue
         if line.startswith("|"):
@@ -217,8 +252,8 @@ PREAMBLE = r"""\documentclass[11pt]{article}
 \usepackage[margin=1in]{geometry}
 \usepackage{fontspec}
 \usepackage{xeCJK}
-\setmainfont{Times New Roman}
-\setCJKmainfont{Songti TC}
+\IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}}{\setmainfont{TeX Gyre Termes}}
+\IfFontExistsTF{Songti TC}{\setCJKmainfont{Songti TC}}{\setCJKmainfont{Noto Serif CJK TC}}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{booktabs}
@@ -230,7 +265,7 @@ PREAMBLE = r"""\documentclass[11pt]{article}
 \usepackage{microtype}
 \setlength{\parindent}{1.5em}
 \setlength{\parskip}{0.25em}
-\title{Authenticated Relationship Routing Mitigates External-Identity Attacks in LLM-Agent Collectives}
+\title{Refusing Self-Declared Relationships Before Prompting Mitigates Unauthenticated External Traffic in LLM-Agent Collectives}
 \author{Ben Tseng\\\small Affiliation to be confirmed before submission}
 \date{}
 \begin{document}

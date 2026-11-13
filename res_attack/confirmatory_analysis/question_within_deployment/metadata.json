@@ -1,0 +1,11 @@
+{
+  "statsmodels_note": "fit_map BFGS, vcp_p=0.5, fe_p=5.0 unless stated",
+  "warnings": {
+    "primary_qwd": []
+  },
+  "question_logit_rate_correlation": -0.4859025351767767,
+  "qwd_random_effect_sds": {
+    "question_in_deployment": 3.659215147023184,
+    "seed_graph": 0.13559517932241796
+  }
+}

@@ -1,0 +1,13 @@
+data,specification,contrast,odds_ratio,p_two_sided
+accepted,preregistered_shared_question,H1,1.2286603731249723,1.453294374723701e-05
+accepted,preregistered_shared_question,H2 primary,0.793711337018256,0.03728304963990123
+accepted,preregistered_shared_question,H3,0.5920688927427303,4.101533621609492e-06
+accepted,question_within_deployment,H1,1.9004307273992342,1.3323579023428738e-12
+accepted,question_within_deployment,H2 primary,0.4800725199305457,0.00023383065520091246
+accepted,question_within_deployment,H3,0.1999871736309051,2.7749547696026244e-14
+failed_attempts_substituted,preregistered_shared_question,H1,1.1809306931038057,0.0004554443903429489
+failed_attempts_substituted,preregistered_shared_question,H2 primary,0.8430303451696979,0.12355625389347147
+failed_attempts_substituted,preregistered_shared_question,H3,0.6343237258365312,6.108391202988092e-05
+failed_attempts_substituted,question_within_deployment,H1,1.5856101352713807,1.3558150467143092e-08
+failed_attempts_substituted,question_within_deployment,H2 primary,0.6244760052070114,0.01143079197628408
+failed_attempts_substituted,question_within_deployment,H3,0.2788017037667864,1.0789928994109518e-10

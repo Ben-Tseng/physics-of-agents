@@ -40,6 +40,8 @@ local credentials are intentionally excluded from Git history.
 - [Accepted block manifest](res_attack/confirmatory_analysis/accepted_block_manifest.csv)
 - [Accepted episode-level data](res_attack/confirmatory_analysis/accepted_episode_data.csv)
 - [Analysis metadata and file hashes](res_attack/confirmatory_analysis/analysis_metadata.json)
+- [Repository and paper file map](PROJECT_STRUCTURE.md)
+- [Current paper package](paper/README.md)
 
 Rebuild the confirmatory statistics and figure from the repository root:
 

@@ -1,0 +1,11 @@
+{
+  "accepted_episode_rows": 3600,
+  "question_clusters": 18,
+  "prior_grid_fits": 9,
+  "prior_grid_all_h1_or_above_one": true,
+  "prior_grid_all_h2_or_below_one": true,
+  "prior_grid_all_h3_or_below_one": true,
+  "leave_one_question_out_all_h1_or_above_one": true,
+  "leave_one_question_out_all_h2_or_below_one": true,
+  "leave_one_question_out_all_h3_or_below_one": true
+}
